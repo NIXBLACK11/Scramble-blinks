@@ -1,4 +1,4 @@
-export async function updatePlayerWPMRequest(gameID: string, playerNumber: number, score: number) {
+export async function updatePlayerScoreRequest(gameID: string, playerNumber: number, score: number) {
     try {
       const url = new URL(`/api/game/setScore`, window.location.origin);
       url.searchParams.append('gameID', gameID);
@@ -12,12 +12,12 @@ export async function updatePlayerWPMRequest(gameID: string, playerNumber: numbe
       const data = await response.json();
   
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to update WPM');
+        throw new Error(data.error || 'Failed to update Score');
       }
   
       return data;
     } catch (error) {
-      console.error('Error in updatePlayerWPMRequest:', error);
+      console.error('Error in updatePlayerScoreRequest:', error);
       throw error;
     }
   }

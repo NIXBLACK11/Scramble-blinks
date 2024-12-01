@@ -1,0 +1,28 @@
+@import './colors.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  background-color: #17B8BD;
+  color: white;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.custom-cursor {
+  font-size: 2rem;
+  line-height: 1;
+  height: 1.5em;
+  display: inline-block;
+  transform: translate(-10px, 20%);
+}
